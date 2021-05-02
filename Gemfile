@@ -36,6 +36,7 @@ group :development do
   gem 'rb-readline'
   gem 'rspec-json_expectations'
   gem 'rspec-rails'
+  gem 'rails-controller-testing'
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.2'
   gem 'rails-controller-testing'
