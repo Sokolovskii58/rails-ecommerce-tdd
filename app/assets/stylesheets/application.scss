@@ -13,3 +13,22 @@
  *= require_tree .
  *= require_self
  */
+ @import 'bootstrap/scss/bootstrap';
+
+
+ .text-banner-hide{
+   color: #f8f9fa00 !important;
+   font-size: 30px;
+  }
+
+.text-banner{
+  color: #f8f9fa !important;
+  font-size: 30px;
+    text-shadow: 1px 5px 2px black, 0 0 1em black; /* Параметры тени */
+}
+
+.bg-blind{
+  background-color: #0000009c;
+  background-blend-mode: screen, overlay;
+
+}

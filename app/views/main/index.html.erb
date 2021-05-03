@@ -1,0 +1,61 @@
+<%= render 'partials/main/top_header' %>
+
+<% if @brands.nil? %>
+
+<% else %>
+  <div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row">
+        <% @brands.each do |i| %>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm border-info mb-3  ">
+            <%= image_tag(i.img, alt: "") %>
+            <div class="card-img-overlay text-banner-hide text-center " id="<%= i.id %>">
+              <p class="card-title "><%= i.title %></p>
+              <p class="card-text"><%= i.description %></p>
+
+             </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+
+<% if @hits.nil? %>
+
+<% else %>
+  <div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row">
+        <% @hits.each do |i| %>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm ">
+          <div class="text-center">
+
+               <%= image_tag(i.img, alt: "", class: "bd-placeholder-img  ", width: "200", height: "310")  %>
+            </div>
+
+            <div class="card-body" >
+              <a href="product/<%= i.id %>" class="card-text mb-3"><%= i.title %></a>
+              <h1 class="card-title pricing-card-title">$<%= i.price %> <small class="text-muted">/ <strike><%= i.old_price %></strike></small></h1>
+               <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <%= link_to 'cart_items', class: "btn btn-lg btn-block btn-outline-primary", data: { id: i.id } do %>
+                  <% end %>
+
+                  </div>
+                <small class="text-muted"><%= i.created_at.to_date %></small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>
