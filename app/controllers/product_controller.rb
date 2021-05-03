@@ -16,11 +16,11 @@ class ProductController < ApplicationController
   end
 
   def recently
-    session[:viewed_products] || = []
+    session[:viewed_products] ||= []
   end
 
   def register_visit
-    session[:viewed_products] || = []
+    session[:viewed_products] ||= []
     session[:viewed_products] = ([@product.id] + session[:viewed_products]).uniq.take(3)
   end
 
