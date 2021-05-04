@@ -1,0 +1,137 @@
+        <div class="row">
+            <div class="col-12">
+
+                <!--shop toolbar start-->
+                <div class="shop_toolbar_wrapper flex-column flex-md-row mb-10">
+
+                    <!-- Shop Top Bar Left start -->
+                    <div class="shop-top-bar-left mb-md-0 mb-2">
+                        <div class="shop-top-show">
+                            <span>Showing 1–12 of 39 results</span>
+                        </div>
+                    </div>
+                    <!-- Shop Top Bar Left end -->
+
+                    <!-- Shopt Top Bar Right Start -->
+                    <div class="shop-top-bar-right">
+                        <div class="shop-short-by mr-4">
+                            <select class="nice-select" aria-label=".form-select-sm example" style="display: none;">
+                                <option selected="">Show 24</option>
+                                <option value="1">Show 24</option>
+                                <option value="2">Show 12</option>
+                                <option value="3">Show 15</option>
+                                <option value="3">Show 30</option>
+                            </select><div class="nice-select" tabindex="0"><span class="current">Show 24</span><ul class="list"><li data-value="Show 24" class="option selected">Show 24</li><li data-value="1" class="option">Show 24</li><li data-value="2" class="option">Show 12</li><li data-value="3" class="option">Show 15</li><li data-value="3" class="option">Show 30</li></ul></div>
+                        </div>
+
+                        <div class="shop-short-by mr-4">
+                            <select class="nice-select" aria-label=".form-select-sm example" style="display: none;">
+                                <option selected="">Short by Default</option>
+                                <option value="1">Short by Popularity</option>
+                                <option value="2">Short by Rated</option>
+                                <option value="3">Short by Latest</option>
+                                <option value="3">Short by Price</option>
+                                <option value="3">Short by Price</option>
+                            </select><div class="nice-select" tabindex="0"><span class="current">Short by Default</span><ul class="list"><li data-value="Short by Default" class="option selected">Short by Default</li><li data-value="1" class="option">Short by Popularity</li><li data-value="2" class="option">Short by Rated</li><li data-value="3" class="option">Short by Latest</li><li data-value="3" class="option">Short by Price</li><li data-value="3" class="option">Short by Price</li></ul></div>
+                        </div>
+
+                        <div class="shop_toolbar_btn">
+                            <button data-role="grid_4" type="button" class="active btn-grid-4" title="Grid"><i class="fa fa-th"></i></button>
+                            <button data-role="grid_list" type="button" class="btn-list" title="List"><i class="fa fa-th-list"></i></button>
+                        </div>
+                    </div>
+                    <!-- Shopt Top Bar Right End -->
+
+                </div>
+                <!--shop toolbar end-->
+
+                <!-- Shop Wrapper Start -->
+                <div class="row shop_wrapper grid_4">
+
+                    <!-- Single Product Start -->
+                    <% @product.related.each do |i| %>
+
+                    <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 product aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+                        <div class="product-inner">
+                            <div class="thumb">
+                                <a href="product/<%= i.id %>" class="image">
+                                  <%= image_tag(i.img, class: "first-image", alt: "Product" ) %>
+                                  <%= image_tag(i.img, class: "second-image", alt: "Product" ) %>
+                                </a>
+                                <div class="actions">
+                                    <a href="wishlist.html" title="Wishlist" class="action wishlist"><i class="pe-7s-like"></i></a>
+
+                                    <a href="product/<%= i.id %>" title="<%= i.title %>" class="action quickview" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><i class="pe-7s-search"></i></a>
+                                    <a href="compare.html" title="Compare" class="action compare"><i class="pe-7s-shuffle"></i></a>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <h4 class="sub-title"><a href="product/<%= i.id %>"><%= i.title %></a></h4>
+                                <h5 class="title"><a href="product/<%= i.id %>"><%= i.description %></a></h5>
+                                <span class="ratings">
+                                        <span class="rating-wrap">
+                                            <span class="star" style="width: 100%"></span>
+                                </span>
+                                <span class="rating-num">(4)</span>
+                                </span>
+                                <p><%= i.description %></p>
+                                <span class="price">
+                                        <span class="new">$<%= i.price %></span>
+                                <span class="old">$<%= i.old_price %></span>
+                                </span>
+                                <div class="shop-list-btn">
+                                    <a title="Wishlist" href="#" class="btn btn-sm btn-outline-dark btn-hover-primary wishlist"><i class="fa fa-heart"></i></a>
+                                    <button class="btn btn-sm btn-outline-dark btn-hover-primary" title="Add To Cart">Add To Cart</button>
+                                    <a title="Compare" href="#" class="btn btn-sm btn-outline-dark btn-hover-primary compare"><i class="fa fa-random"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <% end %>
+                    <!-- Single Product End -->
+                </div>
+                <!-- Shop Wrapper End -->
+
+                <!--shop toolbar start-->
+                <div class="shop_toolbar_wrapper mt-10">
+
+                    <!-- Shop Top Bar Left start -->
+                    <div class="shop-top-bar-left">
+                        <div class="shop-short-by mr-4">
+                            <select class="nice-select rounded-0" aria-label=".form-select-sm example" style="display: none;">
+                                <option selected="">Show 12 Per Page</option>
+                                <option value="1">Show 12 Per Page</option>
+                                <option value="2">Show 24 Per Page</option>
+                                <option value="3">Show 15 Per Page</option>
+                                <option value="3">Show 30 Per Page</option>
+                            </select><div class="nice-select rounded-0" tabindex="0"><span class="current">Show 12 Per Page</span><ul class="list"><li data-value="Show 12 Per Page" class="option selected">Show 12 Per Page</li><li data-value="1" class="option">Show 12 Per Page</li><li data-value="2" class="option">Show 24 Per Page</li><li data-value="3" class="option">Show 15 Per Page</li><li data-value="3" class="option">Show 30 Per Page</li></ul></div>
+                        </div>
+                    </div>
+                    <!-- Shop Top Bar Left end -->
+
+                    <!-- Shopt Top Bar Right Start -->
+                    <div class="shop-top-bar-right">
+                        <nav>
+                            <ul class="pagination">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" aria-label="Previous">
+                                        <span aria-hidden="true">«</span>
+                                    </a>
+                                </li>
+                                <li class="page-item"><a class="page-link active" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                        <span aria-hidden="true">»</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <!-- Shopt Top Bar Right End -->
+
+                </div>
+                <!--shop toolbar end-->
+</div>
+</div>
