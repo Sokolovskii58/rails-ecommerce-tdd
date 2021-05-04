@@ -1,6 +1,9 @@
 require 'rails_helper'
+require 'spec_helper'
 
 RSpec.describe ProductController, type: :controller do
+    render_views
+
     describe 'GET #index' do
         let(:product) { create :product }
 

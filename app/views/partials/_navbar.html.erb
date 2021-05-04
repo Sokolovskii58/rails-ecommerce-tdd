@@ -71,25 +71,30 @@
                                     <a href="#"><span>Shop</span> <i class="fa fa-angle-down"></i></a>
                                     <ul class="mega-menu row-cols-4">
                                         <li class="col">
-                                            <h4 class="mega-menu-title">Shop Layout</h4>
+                                            <h4 class="mega-menu-title">For Whom</h4>
                                             <ul class="mb-n2">
-                                                <li><a href="shop-grid.html">Shop Grid</a></li>
-                                                <li><a href="shop-left-sidebar.html">Left Sidebar</a></li>
-                                                <li><a href="shop-right-sidebar.html">Right Sidebar</a></li>
-                                                <li><a href="shop-list-fullwidth.html">List Fullwidth</a></li>
-                                                <li><a href="shop-list-left-sidebar.html">List Left Sidebar</a></li>
-                                                <li><a href="shop-list-right-sidebar.html">List Right Sidebar</a></li>
+                                                <li>
+                                                  <% Category.roots.each do |category| %>
+                                                  <% cache category do %>
+                                                   <%= link_to category.title, "/category/#{category.id}" %>
+
+                                                   <% end %>
+                                                   <% end %>
+                                                </li>
                                             </ul>
                                         </li>
                                         <li class="col">
-                                            <h4 class="mega-menu-title">Product Layout</h4>
+                                            <h4 class="mega-menu-title">Category</h4>
                                             <ul class="mb-n2">
-                                                <li><a href="single-product.html">Single Product</a></li>
-                                                <li><a href="single-product-sale.html">Single Product Sale</a></li>
-                                                <li><a href="single-product-group.html">Single Product Group</a></li>
-                                                <li><a href="single-product-normal.html">Single Product Normal</a></li>
-                                                <li><a href="single-product-affiliate.html">Single Product Affiliate</a></li>
-                                                <li><a href="single-product-slider.html">Single Product Slider</a></li>
+                                                <li>
+                                                  <% Category.roots.each do |category| %>
+                                                    <% category.children.each do |sub|%>
+                                                      <% cache sub do %>
+                                                      <%= link_to sub.title, "/category/#{sub.id}" %>
+                                                      <% end %>
+                                                    <% end %>
+                                                  <% end %>
+                                                </li>
                                             </ul>
                                         </li>
                                         <li class="col">

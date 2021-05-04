@@ -1,6 +1,8 @@
 require 'shoulda-matchers'
 require "bundler/setup"
 require 'rails-controller-testing'
+require 'i18n'
+
 Rails::Controller::Testing.install
 
 ::Bundler.require(:default, :test)

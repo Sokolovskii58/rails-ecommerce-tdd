@@ -1,6 +1,9 @@
 require 'rails_helper'
+require 'spec_helper'
 
 RSpec.describe MainController, type: :controller do
+    render_views
+
     describe 'GET #index' do
         let(:brands) { create_list :brand, 3 }
         let(:hits)   { create_list :product, 8 }

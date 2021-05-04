@@ -314,6 +314,7 @@ DEPENDENCIES
   db-query-matchers
   factory_bot
   faker!
+  i18n
   jbuilder (~> 2.7)
   jquery-rails
   json_spec
