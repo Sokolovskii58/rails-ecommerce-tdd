@@ -6,7 +6,7 @@ RSpec.describe MainController, type: :controller do
         let(:hits)   { create_list :product, 8 }
 
         before { get :index }
-        
+
         context 'required output per page' do
             it 'render to index template' do
                 is_expected.to render_template :index
