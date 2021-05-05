@@ -140,7 +140,22 @@
                                         <li><a href="blog-details-sidebar.html">Blog Details Sidebar</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="contact.html"> <span>Contact</span></a></li>
+                                <li class="has-children">
+                                    <a href="#"><span>Profile</span> <i class="fa fa-angle-down"></i></a>
+                                    <ul class="sub-menu">
+                                    <% if user_signed_in? %>
+                                      <% if current_user.try(:admin?) %>
+                                        <li><%= link_to 'administrator', '#' %></li>
+                                        <li><%= link_to 'API', 'oauth/applications' '#' %></li>
+                                      <% end %>
+                                        <li><%= link_to 'Выход', destroy_user_session_path %></li>
+                                        <li><%= link_to 'Редактирование', edit_user_registration_path %></li>
+                                    <% else %>
+                                        <li><%= link_to 'Вход', new_user_session_path %></li>
+                                        <li><%= link_to 'Регистрация', new_user_registration_path %></li>
+                                    <% end %>
+                                    </ul>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -155,7 +170,8 @@
                             <!-- Search Header Action Button End -->
 
                             <!-- User Account Header Action Button Start -->
-                            <a href="login-register.html" class="header-action-btn d-none d-md-block"><i class="pe-7s-user"></i></a>
+
+                            <a href="/users/sign_in" class="header-action-btn d-none d-md-block"><i class="pe-7s-user"></i></a>
                             <!-- User Account Header Action Button End -->
 
                             <!-- Wishlist Header Action Button Start -->
