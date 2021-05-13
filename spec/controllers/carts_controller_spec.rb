@@ -29,12 +29,11 @@ RSpec.describe CategoryController, type: :controller do
         expect { subject }.to change{ user.reload.cart.present? }.to(false)
       end
 
-      if 'delete product from cart_items' do
+      it 'delete product from cart_items' do
         sign_in(user)
-        expect { subject }.to change{ user.cart.cart_items, :count }.by(-1)
+        expect { subject }.to change(user.cart.cart_items, :count).by(-1)
       end
 
-      
     end
 
   end
