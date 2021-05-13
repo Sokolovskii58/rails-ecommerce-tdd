@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.2'
 
-gem 'devise'
+gem "devise", github: "heartcombo/devise", branch: "master"
 gem 'ancestry'
 gem 'rubocop', require: false
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
@@ -25,6 +25,8 @@ gem 'oj_mimic_json'
 gem 'sassc-rails'
 gem 'uglifier'
 gem 'i18n'
+gem 'omniauth'
+gem 'omniauth-facebook'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
