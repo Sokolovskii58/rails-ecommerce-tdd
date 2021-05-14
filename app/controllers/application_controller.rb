@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  include Pundit
 
   def current_cart
     @current_cart ||= begin
@@ -20,4 +21,8 @@ class ApplicationController < ActionController::Base
   end
 
   helper_method :current_cart, :cart_items, :cart_total
+
+  rescue_from Pundit::NotAuthorizedError do |exception|
+    redirect_to new_user_session_path, alert: exception.message
+  end
 end

@@ -148,7 +148,7 @@
                                         <li><%= link_to 'administrator', '#' %></li>
                                         <li><%= link_to 'API', 'oauth/applications' '#' %></li>
                                       <% end %>
-                                        <li><%= link_to 'Выход', destroy_user_session_path %></li>
+                                        <li><%= button_to 'Выход', destroy_user_session_path, :method => :delete %></li>
                                         <li><%= link_to 'Редактирование', edit_user_registration_path %></li>
                                     <% else %>
                                         <li><%= link_to 'Вход', new_user_session_path %></li>

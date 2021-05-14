@@ -11,6 +11,7 @@ require 'shoulda/matchers'
 require 'rspec/json_expectations'
 require 'database_cleaner'
 require 'i18n'
+require 'pundit/rspec'
 
 
 begin
