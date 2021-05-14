@@ -10,9 +10,5 @@ class User < ApplicationRecord
   has_one :cart, dependent: :destroy
   has_many :authorizations
 
-  def self.authenticate(email, password)
-    user = User.find_for_authentication(email: email)
-    user&.valid_password?(password) ? user : nil
-  end
-
+ 
 end
